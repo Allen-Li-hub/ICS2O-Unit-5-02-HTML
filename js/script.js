@@ -27,11 +27,11 @@ function myButtonClicked() {
   let buttonPositiveChecked = document.getElementById("positive").checked
 
   if (buttonPositiveChecked == true) {
-    let randomNumber = Math.floor(Math.random() * 6) + 1
+    let randomNumber = Math.floor(Math.random() * 6)
     document.getElementById("radio-button-value").innerHTML =
       "Value is: " + randomNumber
   } else {
-    let randomNumber = Math.floor(Math.random() * -6) - 1
+    let randomNumber = Math.floor(Math.random() * -6)
     document.getElementById("radio-button-value").innerHTML =
       "Value is: " + randomNumber
   }
