@@ -1,32 +1,38 @@
 // Copyright (c) 2022 Allen Li All rights reserved
 //
-// Created by: Allen Li
-// Created on: Oct 2022
+// Created by: Allen li
+// Created on: Nov 2022
 // This file contains the JS functions for index.html
-
-"use strict"
 
 /**
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-Unit5-01-HTML/sw.js", {
-    scope: "/ICS2O-Unit5-01-HTML/",
+  navigator.serviceWorker.register("/ICS2OR-Unit5-02/sw.js", {
+    scope: "/ICS2OR-Unit5-02/",
   })
 }
 
-const randomNumber = Math.floor(Math.random() * 6) + 1
-
+/**
+ * This function updates the slider value.
+ */
 function updateSliderValue(valueFromSlider) {
   document.getElementById("slider-value").innerHTML = valueFromSlider
+}
 
-  if (valueFromSlider == randomNumber) {
-    document.getElementById("answer").innerHTML =
-      "the answer was, " + randomNumber + "!" + " You got it! Excellent."
-  }
+/**
+ * This function displays the slider value.
+ */
+function myButtonClicked() {
+  let buttonPositiveChecked = document.getElementById("positive").checked
 
-  if (valueFromSlider != randomNumber) {
-    document.getElementById("answer").innerHTML =
-      "Sorry the answer was, " + randomNumber + "!" + " please try again."
+  if (buttonPositiveChecked == true) {
+    let randomNumber = Math.floor(Math.random() * 6) + 1
+    document.getElementById("radio-button-value").innerHTML =
+      "Value is: " + randomNumber
+  } else {
+    let randomNumber = Math.floor(Math.random() * -6) - 1
+    document.getElementById("radio-button-value").innerHTML =
+      "Value is: " + randomNumber
   }
 }
